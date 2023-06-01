@@ -5,12 +5,13 @@ import conversationsSliceReducer from "../features/conversations/conversationsSl
 import mesagesSliceReducer from "../features/messages/messagesSlice";
 
 export const store = configureStore({
-  reducer: {
-    [apiSlice.reducerPath]: apiSlice.reducer,
-    auth: authSliceReducer,
-    conversations: conversationsSliceReducer,
-    messages: mesagesSliceReducer,
-  },
-  devTools: process.env.NODE_ENV !== "production",
-  middleware: (getDefaultMiddlewares) => getDefaultMiddlewares().concat(apiSlice.middleware),
+    reducer: {
+        [apiSlice.reducerPath]: apiSlice.reducer,
+        auth: authSliceReducer,
+        conversations: conversationsSliceReducer,
+        messages: mesagesSliceReducer,
+    },
+    devTools: process.env.NODE_ENV !== "production",
+    middleware: (getDefaultMiddlewares) =>
+        getDefaultMiddlewares().concat(apiSlice.middleware),
 });
